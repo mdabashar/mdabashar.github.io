@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Md Abul Bashar — Data Science Researcher, QUT</title>
+<meta name="description" content="Md Abul Bashar, PhD — Postdoctoral Research Fellow (MACSYS), School of Computer Science, Queensland University of Technology. Generative AI, text mining and data-efficient machine learning.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+<style>
+  :root{
+    --bg:#fbfaf8; --surface:#fff; --ink:#1c1b19; --muted:#5f5b54;
+    --rule:#e2ddd5; --accent:#7a4419; --accent-soft:#f2ece4;
+    --serif:Charter,"Bitstream Charter","Iowan Old Style",Georgia,Cambria,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#16151a; --surface:#1d1c22; --ink:#eae7e1; --muted:#a6a099;
+      --rule:#33313a; --accent:#e0a071; --accent-soft:#26242c;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:64px}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:17px; line-height:1.65;
+    -webkit-text-size-adjust:100%;
+  }
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---- navigation ---- */
+  nav{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid var(--rule);
+  }
+  nav ul{
+    margin:0 auto; padding:0 20px; max-width:860px;
+    display:flex; flex-wrap:wrap; gap:2px 18px; list-style:none;
+    font-family:var(--sans); font-size:13.5px; letter-spacing:.02em;
+  }
+  nav a{
+    display:block; padding:11px 0; color:var(--muted);
+    text-transform:uppercase; font-weight:500;
+  }
+  nav a:hover{color:var(--accent); text-decoration:none}
+
+  /* ---- layout ---- */
+  main{max-width:860px; margin:0 auto; padding:0 20px 72px}
+  section{padding-top:38px}
+  h1{
+    font-size:2.15rem; line-height:1.18; margin:0 0 6px;
+    letter-spacing:-.015em; font-weight:600;
+  }
+  h2{
+    font-family:var(--sans); font-size:.82rem; font-weight:600;
+    text-transform:uppercase; letter-spacing:.12em; color:var(--accent);
+    margin:0 0 14px; padding-bottom:7px; border-bottom:1px solid var(--rule);
+  }
+  h3{font-size:1.06rem; margin:0 0 2px; font-weight:600}
+  p{margin:0 0 14px}
+  ul{margin:0 0 14px; padding-left:1.15em}
+  li{margin-bottom:5px}
+
+  /* ---- header ---- */
+  header{
+    display:flex; gap:26px; align-items:flex-start;
+    padding:44px 0 6px; flex-wrap:wrap;
+  }
+  .photo{
+    width:132px; height:132px; border-radius:50%; object-fit:cover;
+    border:1px solid var(--rule); flex:none; background:var(--accent-soft);
+  }
+  .headtext{flex:1 1 340px; min-width:280px}
+  .role{font-size:1.02rem; color:var(--muted); margin:0 0 14px}
+  .role strong{color:var(--ink); font-weight:600}
+
+  /* ---- entries ---- */
+  .entry{margin-bottom:20px}
+  .entry-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    gap:14px; flex-wrap:wrap;
+  }
+  .when{
+    font-family:var(--sans); font-size:.78rem; color:var(--muted);
+    white-space:nowrap; letter-spacing:.03em;
+  }
+  .where{color:var(--muted); font-style:italic; font-size:.95rem; margin:0 0 5px}
+  .entry ul{margin-top:6px}
+
+  /* ---- metrics ---- */
+  .metrics{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:1px; background:var(--rule); border:1px solid var(--rule);
+    border-radius:7px; overflow:hidden; margin:0 0 18px;
+  }
+  .metric{background:var(--surface); padding:14px 12px; text-align:center}
+  .metric b{display:block; font-size:1.5rem; line-height:1.2; font-weight:600}
+  .metric span{
+    font-family:var(--sans); font-size:.71rem; text-transform:uppercase;
+    letter-spacing:.08em; color:var(--muted);
+  }
+
+  /* ---- publications ---- */
+  ol.pubs{padding-left:1.4em; margin:0 0 14px}
+  ol.pubs li{margin-bottom:11px}
+  .venue{color:var(--muted); font-style:italic}
+  .cited{
+    font-family:var(--sans); font-size:.72rem; color:var(--muted);
+    border:1px solid var(--rule); border-radius:20px; padding:1px 8px;
+    margin-left:5px; white-space:nowrap;
+  }
+
+  /* ---- tables ---- */
+  .tablewrap{overflow-x:auto; margin:0 0 14px}
+  table{border-collapse:collapse; width:100%; font-size:.94rem; min-width:520px}
+  th,td{text-align:left; padding:8px 12px 8px 0; border-bottom:1px solid var(--rule); vertical-align:top}
+  th{
+    font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+    letter-spacing:.07em; color:var(--muted); font-weight:600;
+  }
+
+  /* ---- misc ---- */
+  .note{
+    background:var(--accent-soft); border-left:2px solid var(--accent);
+    padding:11px 15px; margin:0 0 16px; font-size:.95rem;
+  }
+  .contact{
+    display:flex; flex-wrap:wrap; gap:9px; list-style:none; padding:0; margin:0 0 14px;
+  }
+  .contact a{
+    display:inline-block; border:1px solid var(--rule); border-radius:20px;
+    padding:6px 15px; font-family:var(--sans); font-size:.85rem; color:var(--ink);
+  }
+  .contact a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
+  footer{
+    border-top:1px solid var(--rule); margin-top:46px; padding-top:18px;
+    font-family:var(--sans); font-size:.79rem; color:var(--muted);
+  }
+  @media (max-width:560px){
+    body{font-size:16px}
+    h1{font-size:1.75rem}
+    header{padding-top:30px; gap:18px}
+    .photo{width:96px; height:96px}
+    /* keep the sticky bar to a single scrollable line so it doesn't
+       consume a third of a phone screen */
+    html{scroll-padding-top:48px}
+    nav ul{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch}
+    nav ul::-webkit-scrollbar{display:none}
+    nav a{white-space:nowrap; padding:13px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#activities">Activities</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#mentorship">Mentorship</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <header>
+    <!-- Replace with a professional headshot: save as photo.jpg beside index.html
+         and change src to "photo.jpg". Currently uses the GitHub avatar. -->
+    <img class="photo" src="https://avatars.githubusercontent.com/u/40254877?v=4"
+         alt="Md Abul Bashar">
+    <div class="headtext">
+      <h1>Md Abul Bashar</h1>
+      <p class="role">
+        <strong>Postdoctoral Research Fellow (MACSYS)</strong><br>
+        School of Computer Science, Queensland University of Technology<br>
+        Associate Investigator, QUT Centre for Data Science · Brisbane, Australia
+      </p>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am a data scientist working on <strong>data-efficient deep learning</strong>: getting reliable
+      models out of scarce labels, noisy multimodal inputs, and data distributions that shift
+      underneath you. My research spans generative AI and large language models, text mining, and
+      machine learning, with over 15 years of research and development experience and nine years
+      post-PhD.
+    </p>
+    <p>
+      My work has been funded by the Australian Research Council, government agencies and private
+      industry, and has produced deployed systems as well as publications — including a bias-detection
+      model commercialised in the United States and now used by Fortune 500 companies. Research from
+      my group has been covered in more than 200 national and international media outlets.
+    </p>
+    <p>
+      I am currently a member of the QUT node of <strong>MACSYS</strong>, the ARC Centre of Excellence
+      for the Mathematical Analysis of Cellular Systems, where I work on biomedical relation
+      extraction and multi-omics fusion for whole-cell modelling.
+    </p>
+    <div class="note">
+      <strong>Latest.</strong> 2026 — four journal articles in press: <em>Neural Networks</em>,
+      <em>Expert Systems with Applications</em> (×2) and <em>Intelligent Systems with Applications</em>.
+      Recent work appeared at <strong>ACL 2025</strong>.
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>PhD in Computer Science</h3>
+        <span class="when">2013 – 2016</span>
+      </div>
+      <p class="where">Queensland University of Technology, Brisbane, Australia</p>
+      <ul>
+        <li>Thesis: <em>A Personalised Ontology Framework for Interpreting Discovered Knowledge in Text Information</em></li>
+        <li>Completed in minimum time with four first-author publications. Awarded December 2016, conferred July 2017.</li>
+        <li>QUT Postgraduate Research Award (competitive international scholarship) and full HDR tuition fee scholarship.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>BSc (Engineering) in Computer Science &amp; Engineering</h3>
+        <span class="when">2002 – 2008</span>
+      </div>
+      <p class="where">Shahjalal University of Science and Technology, Sylhet, Bangladesh</p>
+      <ul>
+        <li>Honours; CGPA 3.84/4.0; ranked 2nd in a cohort of 120.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Postdoctoral Research Fellow, MACSYS</h3>
+        <span class="when">2025 – present</span>
+      </div>
+      <p class="where">School of Computer Science, Queensland University of Technology</p>
+      <ul>
+        <li>Member of the QUT node of the ARC Centre of Excellence for the Mathematical Analysis of Cellular Systems.</li>
+        <li>Biomedical relation extraction and multi-omics fusion for whole-cell modelling.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Research Fellow (Level B, research-only)</h3>
+        <span class="when">2021 – 2025</span>
+      </div>
+      <p class="where">School of Computer Science, Queensland University of Technology</p>
+      <ul>
+        <li>Co-leader of the Applied Data Mining Research Group with Professor Richi Nayak.</li>
+        <li>Research leadership across deep learning, multimodal fusion, cyber-threat intelligence, predictive healthcare and Indigenous data sovereignty.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Research Associate (Level A, research-only)</h3>
+        <span class="when">2017 – 2021</span>
+      </div>
+      <p class="where">School of Computer Science, Queensland University of Technology</p>
+      <ul>
+        <li>Foundational work in transfer learning, domain adaptation and interpretable text mining.</li>
+        <li>Developed the misogynistic-tweet detection model and the core model behind the commercialised iShield.AI bias-detection platform.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Associate Investigator</h3>
+        <span class="when">2020 – present</span>
+      </div>
+      <p class="where">QUT Centre for Data Science</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Lecturer, Department of Computer Science and Engineering</h3>
+        <span class="when">2010 – 2013</span>
+      </div>
+      <p class="where">Comilla University, Bangladesh</p>
+      <ul>
+        <li>Taught seven courses across algorithms, data structures, discrete mathematics, object-oriented and structured programming, and analog electronics.</li>
+        <li>Delivered an SMS-based admission test registration system used by more than 40,000 students annually.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Software Engineer</h3>
+        <span class="when">2008 – 2010</span>
+      </div>
+      <p class="where">Structured Data Systems Limited, Dhaka, Bangladesh</p>
+      <ul>
+        <li>Backend developer for <em>the GRID</em>, a location-aware social networking platform launched by Vodacom South Africa, which reached approximately two million users.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="awards">
+    <h2>Awards, Scholarships and Grants</h2>
+    <ul>
+      <li><strong>2023</strong> — Commendation, EMCR Publication Excellence, QUT Centre for Data Science.</li>
+      <li><strong>2021</strong> — Early and Mid-Career Researcher Publication Excellence Award, QUT Centre for Data Science.</li>
+      <li><strong>2019</strong> — First place, HASOC'19 International Hate Speech and Offensive Content Identification Challenge.</li>
+      <li><strong>2016</strong> — Second-best paper award, IEEE/WIC/ACM International Conference on Web Intelligence.</li>
+      <li><strong>2013–2017</strong> — QUT Postgraduate Research Award ($86,285) and HDR Tuition Fee Scholarship.</li>
+      <li><strong>2008</strong> — New Telecommunications Service of the Year Award, Dubai (team award for <em>the GRID</em>).</li>
+    </ul>
+    <p>
+      <strong>Research income: $119,500</strong> — eight consecutive QUT Centre for Data Science
+      seeding grants ($80,000) and industry research contracts with Energy Queensland and
+      Pallava Technologies/iShield.AI ($39,500).
+    </p>
+  </section>
+
+  <section id="activities">
+    <h2>Professional Activities</h2>
+    <ul>
+      <li>Program Committee member, Australasian Data Mining Conference (AusDM) 2021 and 2025.</li>
+      <li>Publicity Chair, Australasian Data Mining Conference (AusDM) 2020 and 2021.</li>
+      <li>Editorial member and session chair, MIDAS 2021 (International Conference on Machine Intelligence and Data Science Applications).</li>
+      <li>Invited session chair, IJCNN 2023 (International Joint Conference on Neural Networks), Gold Coast.</li>
+      <li>External examiner, MPhil thesis, 2025.</li>
+      <li>Panel member, QUT PhD confirmation and final seminars, 2017–2024.</li>
+      <li>Reviewer for journals and conferences in machine learning and data mining.</li>
+      <li>Guest lecturer, QUTeX executive education; online instructor for the IIITs and IIT India (<em>GenAI for Information Extraction</em>, 2025).</li>
+    </ul>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+
+    <h3>Interests</h3>
+    <ul>
+      <li><strong>Generative AI and large language models</strong> — information extraction, compliance analysis, question answering over organisational data.</li>
+      <li><strong>Multimodal and multi-omics fusion</strong> — modality bias, uncertainty-guided meta-learning, deep kernel fusion.</li>
+      <li><strong>Text mining and NLP</strong> — topic modelling, online abuse detection, cyber-threat intelligence.</li>
+      <li><strong>Anomaly detection and time series</strong> — GAN-based methods for predictive maintenance.</li>
+      <li><strong>Label-efficient learning</strong> — active learning, semi-supervised methods, transfer learning and domain adaptation.</li>
+    </ul>
+
+    <h3>Selected projects</h3>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Project</th><th>Period</th><th>Partner / funder</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Biomedical multi-omics modelling</td><td>2023 – present</td><td>MACSYS; QUT Burns and Trauma Laboratory</td></tr>
+          <tr><td>Multi-modal data representation</td><td>2021 – present</td><td>QUT Centre for Data Science</td></tr>
+          <tr><td>AI against modern slavery</td><td>2025 – present</td><td>International collaboration</td></tr>
+          <tr><td>Social media for cyber-threat intelligence</td><td>2021 – 2026</td><td>QUT Centre for Data Science</td></tr>
+          <tr><td>Repatriation of Indigenous ancestral human remains</td><td>2021 – 2026</td><td>Australian National University; ARC Discovery</td></tr>
+          <tr><td>Predictive maintenance</td><td>2021 – 2022</td><td>Verton; Innovative Manufacturing CRC</td></tr>
+          <tr><td>Online abuse detection and public health discourse</td><td>2018 – 2022</td><td>QUT IFE, CDS and Digital Observatory</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Research into practice</h3>
+    <ul>
+      <li><strong>iShield.AI</strong> — the first commercially deployed implicit bias-detection system; core model developed by me, available on the Slack App Directory and used by Fortune 500 companies.</li>
+      <li><strong>Robotic Marketer</strong> — a world-first AI marketing-strategy automation platform, adopted by SAP, Oracle and Hungry Jack's.</li>
+      <li><strong>Abusive student feedback detection</strong> — a system now in operational use at QUT.</li>
+      <li><strong>Energy Queensland</strong> — Bayesian uncertainty-aware propensity-to-pay models guiding customer intervention strategies.</li>
+    </ul>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <div class="metrics">
+      <div class="metric"><b>55</b><span>Publications</span></div>
+      <div class="metric"><b>1,040</b><span>Citations</span></div>
+      <div class="metric"><b>17</b><span>h-index</span></div>
+      <div class="metric"><b>23</b><span>i10-index</span></div>
+    </div>
+    <p style="font-size:.88rem;color:var(--muted);margin-top:-6px">
+      Google Scholar, August 2026. 29 refereed journal articles, 20 refereed conference papers.
+    </p>
+
+    <h3>Selected publications</h3>
+    <ol class="pubs">
+      <li>Bora, A. E., Arodi, A., Zhang, D., Bannister, J., Bronzi, M., Tchango, A. F., <strong>Bashar, M. A.</strong>, Nayak, R., &amp; Mengersen, K. (2025). AIMSCheck: Leveraging LLMs for AI-assisted review of modern slavery statements across jurisdictions. <span class="venue">Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Long Papers)</span>, 9109–9135.</li>
+      <li><strong>Bashar, M. A.</strong>, &amp; Nayak, R. (2020). TAnoGAN: Time series anomaly detection with generative adversarial networks. <span class="venue">IEEE Symposium Series on Computational Intelligence</span>, 1778–1785.<span class="cited">269 citations</span></li>
+      <li>Luong, K., Nayak, R., Balasubramaniam, T., &amp; <strong>Bashar, M. A.</strong> (2022). Multi-layer manifold learning for deep non-negative matrix factorization-based multi-view clustering. <span class="venue">Pattern Recognition</span>, 131, 108815.<span class="cited">119 citations</span></li>
+      <li><strong>Bashar, M. A.</strong>, Nayak, R., &amp; Suzor, N. (2020). Regularising LSTM classifier by transfer learning for detecting misogynistic tweets with small training set. <span class="venue">Knowledge and Information Systems</span>.<span class="cited">63 citations</span></li>
+      <li>Zhang, D., Nayak, R., &amp; <strong>Bashar, M. A.</strong> (2024). Pre-gating and contextual attention gate — a new fusion method for multi-modal data tasks. <span class="venue">Neural Networks</span>, 179, 106553.<span class="cited">40 citations</span></li>
+      <li>Zhang, D., <strong>Bashar, M. A.</strong>, &amp; Nayak, R. (2025). A novel multi-modal fusion method based on uncertainty-guided meta-learning. <span class="venue">Pattern Recognition</span>, 158, 110993.<span class="cited">31 citations</span></li>
+      <li><strong>Bashar, M. A.</strong>, &amp; Nayak, R. (2025). ALGAN: Time series anomaly detection with adjusted-LSTM GAN. <span class="venue">International Journal of Data Science and Analytics</span>, 20(6), 5719–5737.<span class="cited">34 citations</span></li>
+      <li>Cunningham, S., Laundon, M., Cathcart, A., <strong>Bashar, M. A.</strong>, &amp; Nayak, R. (2023). First, do no harm: Automated detection of abusive comments in student evaluation of teaching surveys. <span class="venue">Assessment &amp; Evaluation in Higher Education</span>, 48(3), 377–389.<span class="cited">35 citations</span></li>
+      <li><strong>Bashar, M. A.</strong>, &amp; Nayak, R. (2021). Active learning for effectively fine-tuning transfer learning to downstream task. <span class="venue">ACM Transactions on Intelligent Systems and Technology</span>, 12(2), 1–24.<span class="cited">28 citations</span></li>
+      <li>Zhang, D., <strong>Bashar, M. A.</strong>, Nayak, R., &amp; Cuttle, L. (2025). A novel modality contribution confidence-enhanced multimodal deep learning framework for multiomics data. <span class="venue">BMC Bioinformatics</span>, 26(1), 271.</li>
+    </ol>
+
+    <p>
+      Full list on <a href="https://scholar.google.com/citations?user=agCLa4gAAAAJ&amp;hl=en">Google Scholar</a>
+      · Code for several of these on <a href="https://github.com/mdabashar">GitHub</a>.
+    </p>
+  </section>
+
+  <section id="mentorship">
+    <h2>Mentorship and Supervision</h2>
+    <p>
+      I have co-supervised seven higher degree research students since 2017, five of whom have
+      graduated, two with university awards. I also mentor research assistants funded through my own
+      grants.
+    </p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Student</th><th>Degree</th><th>Topic</th><th>Status</th><th>Outcome</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gaurangi Anand</td><td>PhD</td><td>Unsupervised visual perception-based representation learning for time series and trajectories</td><td>Graduated 2021</td><td>Executive Dean's Commendation</td></tr>
+          <tr><td>Duoyi Zhang</td><td>PhD</td><td>Multimodal fusion and representation learning</td><td>Graduated 2025</td><td>Faculty of Science HDR High Achiever Award</td></tr>
+          <tr><td>Sharon Torao Pingi</td><td>PhD</td><td>Early classification of longitudinal data using GANs</td><td>Graduated 2025</td><td></td></tr>
+          <tr><td>Ahmed Shoeb Talukder</td><td>MPhil</td><td>Information extraction with limited annotated data</td><td>Graduated 2024</td><td></td></tr>
+          <tr><td>Yue (Joy) Wang</td><td>PhD</td><td>Cyber-threat intelligence from social media</td><td>Graduated 2026</td><td></td></tr>
+          <tr><td>Soroush Faridan Jahromi</td><td>PhD</td><td>Biomedical named entity recognition</td><td>In progress</td><td></td></tr>
+          <tr><td>Dang Khoa Nguyen</td><td>MPhil</td><td>Multi-omics fusion</td><td>In progress</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      I have also taught and tutored IFN580 Machine Learning, IFN509 Data Exploration and Mining,
+      CAB330 Data and Web Analytics and INB302 IT Capstone Project at QUT.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact">
+      <li><a href="mailto:m1.bashar@qut.edu.au">Email</a></li>
+      <li><a href="https://scholar.google.com/citations?user=agCLa4gAAAAJ&amp;hl=en">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0003-1004-4085">ORCID</a></li>
+      <li><a href="https://www.linkedin.com/in/ma-bashar-3499491b/">LinkedIn</a></li>
+      <li><a href="https://github.com/mdabashar">GitHub</a></li>
+      <li><a href="http://basharcse.blogspot.com/p/research-projects.html">Research projects</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2026 Md Abul Bashar · Brisbane, Australia · Last updated August 2026
+  </footer>
+
+</main>
+</body>
+</html>

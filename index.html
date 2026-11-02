@@ -77,11 +77,16 @@
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
+  <div class="navin">
+  <a class="brand" href="#top"><i>MAB</i><span>Md Abul Bashar</span></a>
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#education">Education</a></li>
@@ -94,25 +99,41 @@
     <li><a href="#mentorship">Mentorship</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  </div>
 </nav>
 
-<main>
-
-  <header>
+<header class="hero" id="top">
+  <div class="hero-in">
     <!-- photo.jpg is a 600x600 square crop of the supplied headshot, generated
          2026-08-20. Self-hosted so the Open Graph preview does not depend on
          GitHub's avatar CDN. -->
     <img class="photo" src="photo.jpg" width="600" height="600"
          alt="Md Abul Bashar">
     <div class="headtext">
+      <p class="eyebrow">Data Science · Generative AI · Machine Learning</p>
       <h1>Md Abul Bashar</h1>
       <p class="role">
         <strong>Postdoctoral Research Fellow (MACSYS)</strong><br>
         School of Computer Science, Queensland University of Technology<br>
         Associate Investigator, QUT Centre for Data Science · Brisbane, Australia
       </p>
+      <ul class="chips">
+        <li>Generative AI &amp; LLMs</li>
+        <li>Multimodal fusion</li>
+        <li>Text mining &amp; NLP</li>
+        <li>Anomaly detection</li>
+        <li>Label-efficient learning</li>
+      </ul>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:m1.bashar@qut.edu.au">Get in touch</a>
+        <a class="btn btn-ghost" href="publications.html">Publications</a>
+        <a class="btn btn-ghost" href="https://scholar.google.com/citations?user=agCLa4gAAAAJ&amp;hl=en">Google Scholar</a>
+      </div>
     </div>
-  </header>
+  </div>
+</header>
+
+<main>
 
   <section id="about">
     <h2>About</h2>
@@ -174,8 +195,9 @@
 
   <section id="experience">
     <h2>Experience</h2>
+    <div class="timeline">
 
-    <div class="entry">
+    <div class="entry now">
       <div class="entry-head">
         <h3>Postdoctoral Research Fellow, MACSYS</h3>
         <span class="when">Dec 2024 – present</span>
@@ -241,20 +263,21 @@
         <li>Backend developer for <em>the GRID</em>, a location-aware social networking platform launched by Vodacom South Africa, which reached approximately two million users.</li>
       </ul>
     </div>
+    </div>
   </section>
 
   <section id="awards">
     <h2>Awards, Scholarships and Grants</h2>
-    <ul>
-      <li><strong>2025</strong> — Outstanding Achievement Award, School of Computer Science, QUT.</li>
-      <li><strong>2023</strong> — Commendation, EMCR Publication Excellence, QUT Centre for Data Science.</li>
-      <li><strong>2021</strong> — Early and Mid-Career Researcher Publication Excellence Award, QUT Centre for Data Science.</li>
-      <li><strong>2019</strong> — First place, HASOC'19 International Hate Speech and Offensive Content Identification Challenge.</li>
-      <li><strong>2016</strong> — Second-best paper award, IEEE/WIC/ACM International Conference on Web Intelligence.</li>
-      <li><strong>2013–2017</strong> — QUT Postgraduate Research Award ($86,285) and HDR Tuition Fee Scholarship.</li>
-      <li><strong>2008</strong> — New Telecommunications Service of the Year Award, Dubai (team award for <em>the GRID</em>).</li>
+    <ul class="awards">
+      <li><strong>2025</strong><span>Outstanding Achievement Award, School of Computer Science, QUT.</span></li>
+      <li><strong>2023</strong><span>Commendation, EMCR Publication Excellence, QUT Centre for Data Science.</span></li>
+      <li><strong>2021</strong><span>Early and Mid-Career Researcher Publication Excellence Award, QUT Centre for Data Science.</span></li>
+      <li><strong>2019</strong><span>First place, HASOC'19 International Hate Speech and Offensive Content Identification Challenge.</span></li>
+      <li><strong>2016</strong><span>Second-best paper award, IEEE/WIC/ACM International Conference on Web Intelligence.</span></li>
+      <li><strong>2013–2017</strong><span>QUT Postgraduate Research Award ($86,285) and HDR Tuition Fee Scholarship.</span></li>
+      <li><strong>2008</strong><span>New Telecommunications Service of the Year Award, Dubai (team award for <em>the GRID</em>).</span></li>
     </ul>
-    <p>
+    <p class="income">
       <strong>Research income: $119,500</strong> — eight competitive QUT Centre for Data Science
       seed grants, 2021–2026 ($80,000; four as lead investigator, four as co-investigator) and industry research contracts with Energy Queensland and
       Pallava Technologies/iShield.AI ($39,500).
@@ -279,12 +302,12 @@
     <h2>Research</h2>
 
     <h3>Interests</h3>
-    <ul>
-      <li><strong>Generative AI and large language models</strong> — information extraction, compliance analysis, question answering over organisational data.</li>
-      <li><strong>Multimodal and multi-omics fusion</strong> — modality bias, uncertainty-guided meta-learning, deep kernel fusion.</li>
-      <li><strong>Text mining and NLP</strong> — topic modelling, online abuse detection, cyber-threat intelligence.</li>
-      <li><strong>Anomaly detection and time series</strong> — GAN-based methods for predictive maintenance.</li>
-      <li><strong>Label-efficient learning</strong> — active learning, semi-supervised methods, transfer learning and domain adaptation.</li>
+    <ul class="cards">
+      <li><strong>Generative AI and large language models</strong> information extraction, compliance analysis, question answering over organisational data.</li>
+      <li><strong>Multimodal and multi-omics fusion</strong> modality bias, uncertainty-guided meta-learning, deep kernel fusion.</li>
+      <li><strong>Text mining and NLP</strong> topic modelling, online abuse detection, cyber-threat intelligence.</li>
+      <li><strong>Anomaly detection and time series</strong> GAN-based methods for predictive maintenance.</li>
+      <li><strong>Label-efficient learning</strong> active learning, semi-supervised methods, transfer learning and domain adaptation.</li>
     </ul>
 
     <h3>Selected projects</h3>
@@ -310,11 +333,11 @@
       Several of these engagements were delivered under non-disclosure agreements, so the systems
       exist but the papers do not.
     </p>
-    <ul>
-      <li><strong>iShield.AI</strong> — the first commercially deployed implicit bias-detection system; core model developed by me, included on the Slack App Directory and used by Fortune 500 companies.</li>
-      <li><strong>Robotic Marketer</strong> — a world-first AI marketing-strategy automation platform, adopted by SAP, Oracle and Hungry Jack's.</li>
-      <li><strong>Abusive student feedback detection</strong> — a system now in operational use at QUT.</li>
-      <li><strong>Energy Queensland</strong> — Bayesian uncertainty-aware propensity-to-pay models guiding customer intervention strategies.</li>
+    <ul class="cards impact">
+      <li><strong>iShield.AI</strong> the first commercially deployed implicit bias-detection system; core model developed by me, included on the Slack App Directory and used by Fortune 500 companies.</li>
+      <li><strong>Robotic Marketer</strong> a world-first AI marketing-strategy automation platform, adopted by SAP, Oracle and Hungry Jack's.</li>
+      <li><strong>Abusive student feedback detection</strong> a system now in operational use at QUT.</li>
+      <li><strong>Energy Queensland</strong> Bayesian uncertainty-aware propensity-to-pay models guiding customer intervention strategies.</li>
     </ul>
   </section>
 
@@ -352,7 +375,7 @@
       <li>Vu, T. L., Nguyen, M. L., Nguyen, T., <strong>Bashar, M. A.</strong>, Ho, N., Nayak, R., &amp; Drovandi, C. (accepted October 2026). <a href="https://openreview.net/forum?id=moGyCpsG7g">Voronoi-calibrated order selection for Bayesian softmax-gated mixtures of experts</a>. <span class="venue">AXIOM: Foundations of Efficient Deep Learning, NeurIPS 2026 Workshop</span> (short paper, poster). Not counted in the totals above.</li>
     </ul>
 
-    <p>
+    <p class="more">
       <a href="publications.html"><strong>Full list of all 50 peer-reviewed publications →</strong></a><br>
       Also on <a href="https://scholar.google.com/citations?user=agCLa4gAAAAJ&amp;hl=en">Google Scholar</a>
       · Code for several of these on <a href="https://github.com/mdabashar">GitHub</a>.
@@ -421,6 +444,9 @@
 
   <section id="contact">
     <h2>Contact</h2>
+    <div class="contact-panel">
+    <p class="big">Let's talk research</p>
+    <p>Collaborations, supervision and industry partnerships in AI and data science.</p>
     <ul class="contact">
       <li><a href="mailto:m1.bashar@qut.edu.au">Email</a></li>
       <li><a href="https://scholar.google.com/citations?user=agCLa4gAAAAJ&amp;hl=en">Google Scholar</a></li>
@@ -429,6 +455,7 @@
       <li><a href="https://github.com/mdabashar">GitHub</a></li>
       <li><a href="http://basharcse.blogspot.com/p/research-projects.html">Research projects</a></li>
     </ul>
+    </div>
   </section>
 
   <footer>
@@ -437,5 +464,18 @@
   </footer>
 
 </main>
+<script>
+/* progressive enhancement: content is fully visible without JS */
+(function(){
+  var d=document.documentElement; d.classList.add('js');
+  var secs=[].slice.call(document.querySelectorAll('main section'));
+  var links={}; [].forEach.call(document.querySelectorAll('nav ul a[href^="#"]'),function(a){links[a.getAttribute('href').slice(1)]=a});
+  if(!('IntersectionObserver' in window)){d.classList.remove('js');return}
+  var rv=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rv.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  secs.forEach(function(s){s.classList.add('reveal');rv.observe(s)});
+  var nv=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){for(var k in links)links[k].classList.toggle('here',k===e.target.id)}})},{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(function(s){nv.observe(s)});
+})();
+</script>
 </body>
 </html>
